@@ -10,7 +10,7 @@ from kivy.core.window import Window
 from kivy.uix.scrollview import ScrollView
 from instructions import txt_instruction, txt_test1, txt_test2, txt_test3, txt_sits
 
-class PulseScr(App):
+class PulseScr(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
@@ -20,7 +20,7 @@ class PulseScr(App):
         instr = Label(text = txt_test1)
         lbl_result = Label(text = "Введіть результат:")
         self.in_result = TextInput(text = "0", multiline = False)
-        self.btn = Button(text = "Продовжити", size_hint = (0.3, 0.2), pos_hint = {"centerx": 0.5})
+        self.btn = Button(text = "Продовжити", size_hint = (0.3, 0.2), pos_hint = {"center_x": 0.5})
 
         self.btn.on_press = self.next
 
@@ -36,7 +36,7 @@ class PulseScr(App):
     def next(self):
         self.manager.current = "pulse2"
 
-class InstrScr(App):
+class InstrScr(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         outer = BoxLayout(orientation = "vertical", padding = 8, spacing = 8)
@@ -48,7 +48,7 @@ class InstrScr(App):
         self.in_name = TextInput(multiline = False)
         lbl2 = Label(text = "Введіть вік:")
         self.in_age = TextInput(text = "7", multiline = False)
-        self.btn = Button(text = "Почати", size_hint = (0.3, 0.2), pos_hint = {"centerx": 0.5})
+        self.btn = Button(text = "Почати", size_hint = (0.3, 0.2), pos_hint = {"center_x": 0.5})
 
         self.btn.on_press = self.next
 
